@@ -17,10 +17,23 @@ public class ToDoController {
     @RequestMapping(method = RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public ToDoTask add(@RequestBody ToDoTask task) {
-        // TODO implement business logic
-        return null;
+        tasks.add(task);
+
+        return task;
     }
 
+    @RequestMapping(method = RequestMethod.GET)
+    @ResponseStatus(HttpStatus.OK)
+    public List<ToDoTask> listTasks() {
 
-    // TODO Add a GET method listing existing tasks
+        return tasks;
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/priorities")
+    @ResponseStatus(HttpStatus.OK)
+    public TaskPriority[] listPriorities() {
+
+        return TaskPriority.values();
+    }
+
 }

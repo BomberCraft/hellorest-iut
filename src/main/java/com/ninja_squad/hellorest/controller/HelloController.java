@@ -11,8 +11,9 @@ public class HelloController {
 
     @RequestMapping(method = RequestMethod.GET, value = "/{name}")
     public String sayHello(@PathVariable("name") String name) {
-        // TODO
-        return "TODO";
+        String retour = "Hello " + name + "! You are now a ninja, consuming RESTful webservices!";
+
+        return retour;
     }
 
 }

@@ -43,7 +43,7 @@ public class TodoControllerTest {
 
         mockMvc.perform(post("/tasks").content(objectMapper.writeValueAsBytes(task))
                 .contentType(MediaType.APPLICATION_JSON))
-               .andExpect(status().isCreated())
+                .andExpect(status().isCreated())
                 .andExpect(jsonPath("$.priority").value("DEFAULT"))
                 .andExpect(jsonPath("$.label").value("test"));
     }
@@ -55,6 +55,5 @@ public class TodoControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$").isArray());
     }
-
 
 }
